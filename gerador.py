@@ -1,12 +1,9 @@
-import random
-import string
+import string as str
+import numpy as np
 
-def gerar_senha(tamanho=12):
-    caracteres = string.ascii_letters + string.digits + string.punctuation
-    senha = ''.join(random.choice(caracteres) for _ in range(tamanho))
-    return senha
-
-
-tamanho_da_senha = 12  
-senha = gerar_senha(tamanho_da_senha)
-print("Senha gerada:", senha)
+letras = str.ascii_letters
+numeros = str.digits
+especial = str.punctuation
+algarismos = letras + numeros + especial
+senha = np.random.choice(list(algarismos),10)
+print(''.join(senha))
